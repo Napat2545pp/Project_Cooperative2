@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<title>Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+  body {
+    font-family: 'Kanit', sans-serif;
+  }
+  .red {
+        color: rgb(143, 143, 143);
+    }
+    .w3-btn {
+        width:150px;
+        
+        
+    }
+    .div1 {
+    padding: 50px;
+}
+</style>
+<body>
+</style>
+<body>
+  <!-- Sidebar -->
+  <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%"><br><br>
+    <center><img src="/images/icon.png"  style= "width:40%" ></center><br>
+    <center><h2 style="font-family: 'Kanit', sans-serif" ><%= name %></h2> </center><br>
+    <div class = "red">
+      &nbsp;&nbsp;&nbsp; <a style="font: size 10px;">จองห้องประชุม</a><br><br>
+    </div>
+    <a  href="/roomorder" class="w3-bar-item w3-button " >&nbsp;&nbsp;&nbsp; <img src="/images/iconn3.png"  style= "width:10%" > &nbsp; &nbsp; &nbsp; จองห้องประชุม</a>
+    <a  href="/admin/Bookinginuser" class="w3-bar-item w3-button" >&nbsp;&nbsp;&nbsp; <img src="/images/iconn2.png"  style= "width:10%" > &nbsp; &nbsp; &nbsp; ข้อมูลการจองห้องประชุม</a>
+    <div class = out>
+      <br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br>><center><div class="signup-link" style="font-family: 'Kanit', sans-serif">
+        <a class="w3-button w3-gray w3-round-xxlarge" href="/admin/userform">หน้าแรก</a> 
+        <a class="w3-button w3-gray w3-round-xxlarge" href="/">ออกจากระบบ</a>
+       </div></center>
+  </div>  </div>  
+
+<!-- Page Content -->
+<div style="margin-left:25%">
+  <div class="w3-container w3-gray">
+      <center><br><h1 style="font-family: 'Kanit', sans-serif" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; จองห้องประชุม </h1><br></center>
+  </div>
+
+  
+  <div class="div1">
+    <form method="POST" action="/reseveroom">
+  
+      <div class="field">
+       <label>ชื่อ</label>
+      </div><br>
+      <div class="field">
+      <input name="name" type="text" required class="form-control"/>
+     </div><br>
+
+  
+     <div class="field">
+       <label>เบอร์โทรศัพท์</label>
+      </div><br>
+      <div class="field">
+      <input name ="mobile" type="text" required class="form-control"/>
+     </div><br>
+
+     <div class="field">
+      <label>หัวข้อประชุม</label>
+     </div><br>
+     <div class="field">
+     <input name ="section" type="text" required class="form-control"/>
+    </div><br>
+  
+  
+    <div class="field">
+      <label for="departmentname">เลือกแผนก</label>
+    </div><br>
+    <div class="field">
+      <select id="departmentname" name="departmentname" required class="form-control">
+        <% departments.forEach(department => { %>
+          <option value="<%= department.departmentname %>"><%= department.departmentname %></option>
+        <% }); %>
+      </select>
+      <br>
+    </div><br>
+
+    <div class="field">
+      <label for="roomname">เลือกห้องประชุม</label>
+    </div><br>
+    <div class="field">
+      <select id="roomname" name="roomname" required class="form-control">
+        <% rooms.forEach(room => { %>
+          <option value="<%= room.roomname %>"><%= room.roomname %></option>
+        <% }); %>
+      </select>
+    </div><br>
+    
+    <div class="field">
+      <label for="date">เลือกวันที่</label>
+    </div><br>
+    <div class="field">
+      <input type="date" class="form-control" id="date" name="date" value="yyyy-mm-dd HH:MM:ss" required >
+    </div><br>
+    <div class="field">
+      <label for="Entime">เลือกเวลา</label>
+    </div><br>
+    <div class="field">
+      <input type="time" name="Entime" required class="form-control" >
+    </div><br>
+    <div class="field">
+      <label for="Detime">ถึง</label>
+    </div><br>
+    <div class="field">
+      <input type="time" name="Detime" required class="form-control" >
+    </div><br>
+
+    <div class="field">
+      <label>สถานะ</label>
+     </div><br>
+     <div class="field">
+          <select name="status" type="text" required class="form-control">
+            <option value="รอการอนุมัติ">รอการอนุมัติ</option>
+            
+          </select>
+    </div><br>
+
+      <br>
+      <div class="field">
+        <center><button class="w3-button w3-gray w3-round-xxlarge" style="font-family: 'Kanit', sans-serif" type="submit" onclick="myFunction()"  >บันทึก</button></center>
+        <script>
+          function myFunction() {
+            alert("จองห้องประชุมสำเร็จ");
+          }
+          </script>
+      </div>
+   </form>
+  </div>
+  
+
+
+
+  </body>
+    </html>
+
+
+
+
+
+
+
+
+
+
+<!-- 
+    <h1>Reserve Room</h1>
+    <form method="post" action="/reseveroom">
+
+
+      <label for="departmentname">เลือกแผนก:</label>
+      <select id="departmentname" name="departmentname">
+        <% departments.forEach(department => { %>
+          <option value="<%= department.departmentname %>"><%= department.departmentname %></option>
+        <% }); %>
+      </select>
+      <br>
+    
+
+      <label for="roomname">เลือกห้องประชุม:</label>
+      <select id="roomname" name="roomname">
+        <% rooms.forEach(room => { %>
+          <option value="<%= room.roomname %>"><%= room.roomname %></option>
+        <% }); %>
+      </select>
+
+
+      <br>
+      <button type="submit">ยืนยัน</button>
+    </form> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <h2>รายชื่อห้อง</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>ชื่อห้อง</th>
+          <th>ประเภทห้อง</th>
+          <th>ที่นั่ง</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% rooms.forEach(room => { %>
+          <tr>
+            <td><%= room.roomid %></td>
+            <td><%= room.roomname %></td>
+            <td><%= room.roomdetail %></td>
+            <td><%= room.roomseat %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table> -->

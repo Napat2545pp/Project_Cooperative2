@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		<meta charset="utf-8">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+		<style type="text/css">
+			body{
+			font-family: 'Kanit', sans-serif;
+			
+			  }
+			.mySlides {display:none}
+			.w3-left, .w3-right, .w3-badge {cursor:pointer}
+			.w3-badge {height:13px;width:13px;padding:0}
+				
+			.navbar {
+			justify-content: center;
+			
+			}
+			font{
+				font-family: 'Kanit', sans-serif;
+			}
+		
+		
+		  .navbar .navbar-toggler {
+			position: absolute;
+			right: 1rem;
+			top: .5rem;
+			
+			}
+		
+		
+		  .navbar-nav {
+		  align-items: center;
+		  
+			}
+		
+		
+		  @media(min-width: 992px) {
+		  
+		  .navbar-expand-lg {
+			flex-flow: column nowrap;
+		  }  
+		
+		  
+		  .navbar-nav.upper-controls {
+			position: absolute;
+			right: 1rem;
+			top: .5rem;
+			font-size: 80%;
+		   
+				}
+				}
+				.container {
+				column-count: 3;
+				}
+				footer {
+				background-color: #7f7f7f;
+				padding: 15px;
+				}
+				*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Poppins', sans-serif;
+				}
+				::selection{
+				background: #4158d0;
+				color: #fff;
+				}
+				.wrapper{
+				width: 380px;
+				background: #fff;
+				border-radius: 15px;
+				box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+				}
+				.wrapper .title{
+				font-size: 35px;
+				font-weight: 600;
+				text-align: center;
+				line-height: 100px;
+				color: #fff;
+				user-select: none;
+				border-radius: 15px 15px 0 0;
+				background: linear-gradient(-135deg, #898988, #000000);
+				}
+				.wrapper form{
+				padding: 10px 30px 50px 30px;
+				}
+				.wrapper form .field{
+				height: 50px;
+				width: 100%;
+				margin-top: 20px;
+				position: relative;
+				}
+				.wrapper form .field input{
+				height: 100%;
+				width: 100%;
+				outline: none;
+				font-size: 17px;
+				padding-left: 20px;
+				border: 1px solid lightgrey;
+				border-radius: 25px;
+				transition: all 0.3s ease;
+				}
+				.wrapper form .field input:focus,
+				form .field input:valid{
+				border-color: #4158d0;
+				}
+				.wrapper form .field label{
+				position: absolute;
+				top: 50%;
+				left: 20px;
+				color: #999999;
+				font-weight: 400;
+				font-size: 17px;
+				pointer-events: none;
+				transform: translateY(-50%);
+				transition: all 0.3s ease;
+				}
+				form .field input:focus ~ label,
+				form .field input:valid ~ label{
+				top: 0%;
+				font-size: 16px;
+				color: #4158d0;
+				background: #fff;
+				transform: translateY(-50%);
+				}
+				form .content{
+				display: flex;
+				width: 100%;
+				height: 50px;
+				font-size: 16px;
+				align-items: center;
+				justify-content: space-around;
+				}
+				form .content .checkbox{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				}
+				form .content input{
+				width: 15px;
+				height: 15px;
+				background: red;
+				}
+				form .content label{
+				color: #262626;
+				user-select: none;
+				padding-left: 5px;
+				}
+				form .content .pass-link{
+				color: "";
+				}
+				form .field input[type="submit"]{
+				color: #fff;
+				border: none;
+				padding-left: 0;
+				margin-top: -10px;
+				font-size: 20px;
+				font-weight: 500;
+				cursor: pointer;
+				background: linear-gradient(-135deg, #898988, #000000);
+				transition: all 0.3s ease;
+				}
+				form .field input[type="submit"]:active{
+				transform: scale(0.95);
+				}
+				form .signup-link{
+				color: #262626;
+				margin-top: 20px;
+				text-align: center;
+				}
+				form .pass-link a,
+				form .signup-link a{
+				color: #4158d0;
+				text-decoration: none;
+				}
+				form .pass-link a:hover,
+				form .signup-link a:hover{
+				text-decoration: underline;
+				}
+				</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light"><br>
+			<center><a href="#" class="navbar-brand">
+				<h1><p style="font-family: 'Kanit', sans-serif">จองห้องประชุม </p></h1>
+				<h3><p style="font-family: 'Kanit', sans-serif">บริษัท นิตยาไก่ย่าง ฟู้ด แอนด์ เบฟเวอเรจ จำกัด</p></h3>
+			</a></center>
+			<div class="collapse navbar-collapse">
+				<ul class="navbar-nav upper-controls">
+				  <li class="nav-item">
+					<a class="nav-link">🇹🇭 Language</a>
+				  </li>
+				</ul>
+				<ul class="navbar-nav">
+				  <li class="nav-item dropdown">
+				</ul>
+			  </div>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".collapse">
+			  <span class="navbar-toggler-icon"></span>
+			</button>
+		  </nav>
+		  <center><br><br>
+
+		<div class="wrapper">
+			<div class="title" style="font-family: 'Kanit', sans-serif">
+			   เข้าสู่ระบบ
+			</div>
+			<form action="auth" method="POST">
+				<div class="field">
+				   <input type="text" name="username" placeholder="ชื่อผู้ใช้" required>
+				</div>
+				<div class="field">
+				   <input type="password" name="password" placeholder="รหัสผ่าน"  required>
+				</div>
+				<br>
+				<div class="field">
+				 <input style="font-family: 'Kanit', sans-serif" type="submit" value="เข้าสู่ระบบ" />
+				</div>
+			 </form>
+		 </div>	
+		</center>
+
+		
+	</body>
+</html>

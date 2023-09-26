@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<title>Admin</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+  body {
+    font-family: 'Kanit', sans-serif;
+  }
+  .red {
+        color: rgb(143, 143, 143);
+    }
+    .w3-btn {
+        width:150px;
+        
+        
+    }
+</style>
+<body>
+
+<!-- Sidebar -->
+<div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%"><br><br>
+    <center><img src="/images/icon.png"  style= "width:40%" ></center><br>
+    <center><h2 style="font-family: 'Kanit', sans-serif" ><%= name %></h2> </center><br>
+    <div class = "red">
+      &nbsp;&nbsp;&nbsp; <a style="font: size 10px;">จองห้องประชุม</a><br><br>
+    </div>
+    <a  href="/admin/roomorder" class="w3-bar-item w3-button w3-gray" >&nbsp;&nbsp;&nbsp; <img src="/images/iconn3.png"  style= "width:10%" > &nbsp; &nbsp; &nbsp; จองห้องประชุม</a>
+    <a  href="/admin/Bookinginuser" class="w3-bar-item w3-button" >&nbsp;&nbsp;&nbsp; <img src="/images/iconn2.png"  style= "width:10%" > &nbsp; &nbsp; &nbsp; ข้อมูลการจองห้องประชุม</a>
+    <div class = out>
+      <br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br><br><br<br>><center><div class="signup-link" style="font-family: 'Kanit', sans-serif">
+        <a  class="w3-button w3-gray w3-round-xxlarge" href="/admin/userform">หน้าแรก</a>  
+        <a class="w3-button w3-gray w3-round-xxlarge" href="/">ออกจากระบบ</a>
+       </div></center>
+  </div>  </div>  
+<!-- Page Content -->
+<div style="margin-left:25%">
+<div class="w3-container w3-gray">
+    <br><h2 style="font-family: 'Kanit', sans-serif" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ระบบจองห้องประชุม</h2><br>
+</div>
+<br><h3 style="font-family: 'Kanit', sans-serif" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;จองห้องประชุม</h3>   
+</div><br>
+<table class="table">
+    <thead>
+      <tr>
+        <th> </th>
+        <th> </th>
+        
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th> </th>
+        <th>ลำดับ</th>
+        <th>ชื่อห้องประชุม</th>
+        <th>รายละเอียดห้องประชุม</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;จองห้องประชุม</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% items.forEach ( function (item, index ) { %>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>
+          <td> </td>    
+          <td> </td>
+          <td> </td>    
+          <td> </td> 
+          <td> </td>    
+          <td> </td>
+          <td> </td> 
+          <td> </td>    
+          <td> </td>
+          <td> </td> 
+          <td> </td>    
+          <td> </td>
+          <td>
+            <%=item.roomid  %>
+          </td>
+          <td>
+            <%=item.roomname %>
+          </td>
+          <td>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%=item.roomdetail %>
+          </td>
+
+          <td><a class="w3-button w3-gray w3-round-xxlarge" href="/admin/reseveroom">จองห้องประชุม</a>&nbsp;
+          <a class="w3-button w3-gray w3-round-xxlarge" href="/admin/roomdetail/<%=item.roomid%>">ดูรายละเอียด</a></td>
+          </td>
+        </tr>
+        <% } ); %>
+          </div>
+    </tbody>
+  </table> <br><br>
+      
+</body>
+</html>
